@@ -12,13 +12,7 @@ const ChainNameIconMap: Record<number, string> = {
   [ChainId.ETHEREUM_MAINNET]: 'ethereum',
   [ChainId.ETHEREUM_SEPOLIA]: 'ethereum',
   [ChainId.MATIC_MAINNET]: 'polygon',
-  [ChainId.MATIC_MUMBAI]: 'polygon',
   [ChainId.MATIC_AMOY]: 'polygon',
-  [ChainId.ARBITRUM_MAINNET]: 'arbitrum',
-  [ChainId.OPTIMISM_MAINNET]: 'optimism',
-  [ChainId.FANTOM_MAINNET]: 'fantom',
-  [ChainId.BSC_MAINNET]: 'bsc',
-  [ChainId.AVALANCHE_MAINNET]: 'avalanche'
 }
 
 export const ChainSelector = (props: ChainSelectorProps) => {
@@ -51,14 +45,14 @@ export const ChainSelector = (props: ChainSelectorProps) => {
 
   return (
     <>
-      <Button className="dui-chain-selector__button" onClick={onButtonClick}>
+      <Button className={`dui-chain-selector__button ${props.size}`} onClick={onButtonClick}>
         <div
           className={classNames(
             'dui-chain-icon',
             ChainNameIconMap[selectedChain as number]
           )}
         />
-        {!isMobileOrTablet
+        {!isMobileOrTablet && props.size === 'large'
           ? selectedChain === ChainId.ETHEREUM_MAINNET
             ? 'Ethereum'
             : getChainName(selectedChain)

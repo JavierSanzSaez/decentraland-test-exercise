@@ -6,6 +6,7 @@ export type ChainSelectorProps = {
   chains: ChainId[]
   onSelectChain: (chain: ChainId) => void
   i18n: ChainSelectori18n
+  size: "small" | "large"
 }
 
 export type ChainSelectori18n = {

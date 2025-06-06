@@ -5,37 +5,37 @@
 
 .dui-chain-selector__modal .ethereum,
 .dui-chain-selector__button .ethereum {
-  background-image: url('../../assets/chains/ethereum.svg');
+  background-image: url("../../assets/chains/ethereum.svg");
 }
 
 .dui-chain-selector__modal .bsc,
 .dui-chain-selector__button .bsc {
-  background-image: url('../../assets/chains/bsc.svg');
+  background-image: url("../../assets/chains/bsc.svg");
 }
 
 .dui-chain-selector__modal .optimism,
 .dui-chain-selector__button .optimism {
-  background-image: url('../../assets/chains/optimism.svg');
+  background-image: url("../../assets/chains/optimism.svg");
 }
 
 .dui-chain-selector__modal .polygon,
 .dui-chain-selector__button .polygon {
-  background-image: url('../../assets/chains/polygon.svg');
+  background-image: url("../../assets/chains/polygon.svg");
 }
 
 .dui-chain-selector__modal .fantom,
 .dui-chain-selector__button .fantom {
-  background-image: url('../../assets/chains/fantom.svg');
+  background-image: url("../../assets/chains/fantom.svg");
 }
 
 .dui-chain-selector__modal .arbitrum,
 .dui-chain-selector__button .arbitrum {
-  background-image: url('../../assets/chains/arbitrum.svg');
+  background-image: url("../../assets/chains/arbitrum.svg");
 }
 
 .dui-chain-selector__modal .avalanche,
 .dui-chain-selector__button .avalanche {
-  background-image: url('../../assets/chains/avalanche.svg');
+  background-image: url("../../assets/chains/avalanche.svg");
 }
 
 .ui.button.dui-chain-selector__button {
@@ -45,12 +45,20 @@
   padding: 8px 10px;
 }
 
+.ui.button.dui-chain-selector__button.small {
+  min-width: unset;
+}
+
 .dui-chain-selector__element.dui-chain-selector__element-selected {
   background-color: var(--navbar-popup-hover);
 }
 
 .ui.button.dui-chain-selector__button .dui-chain-icon {
   margin-right: 8px;
+}
+
+.ui.button.dui-chain-selector__button.small .dui-chain-icon {
+  margin-right: 0;
 }
 
 .dui-chain-selector__list {
@@ -67,7 +75,7 @@
   height: 40px;
   padding: 6px 8px;
   border: none;
-  color: white;
+  color: black !important; /*Absolutely hate to use this !important but otherwise the current dct UI library will force the unreadable white colour*/
   width: 100%;
   text-wrap: nowrap;
 }

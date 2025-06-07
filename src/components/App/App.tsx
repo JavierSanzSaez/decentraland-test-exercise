@@ -1,17 +1,10 @@
 import React from "react";
-import {
-  Button,
-  Center,
-  Footer,
-  Navbar,
-  Page,
-} from "decentraland-ui";
+import { Button, Center, Footer, Navbar, Page } from "decentraland-ui";
 import { Props } from "./App.types";
 import "./App.css";
-import WalletBalance from "../WalletBalance/WalletBalance";
+import { WalletBalance } from "../WalletBalance";
 
 const App: React.FC<Props> = ({
-  address,
   isConnected,
   onConnect,
   isConnecting,
@@ -30,7 +23,7 @@ const App: React.FC<Props> = ({
               {error ? <p className="error">{error}</p> : null}
             </>
           ) : (
-            <WalletBalance address={address} />
+            <WalletBalance />
           )}
         </Center>
       </Page>

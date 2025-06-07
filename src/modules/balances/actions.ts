@@ -1,3 +1,5 @@
+import { TokenBalance } from "./types";
+
 // Connect Wallet
 export const UPDATE_TOKEN_BALANCES_REQUEST = "UPDATE_TOKEN_BALANCES_REQUEST";
 export const UPDATE_TOKEN_BALANCES_SUCCESS = "UPDATE_TOKEN_BALANCES_SUCCESS";
@@ -10,17 +12,11 @@ export function updateTokenBalancesRequest() {
   };
 }
 
-export function updateTokenBalancesSuccess(
-  tokenAddress: string,
-  symbol: string,
-  balance: string
-) {
+export function updateTokenBalancesSuccess(tokenBalances: TokenBalance[]) {
   return {
     type: UPDATE_TOKEN_BALANCES_SUCCESS,
     payload: {
-      tokenAddress,
-      symbol,
-      balance,
+      tokenBalances,
     },
   };
 }

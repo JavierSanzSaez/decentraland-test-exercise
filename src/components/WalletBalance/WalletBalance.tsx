@@ -32,7 +32,8 @@ const WalletBalance: React.FC<WalletBalanceProps> = ({
         </HeaderMenu>
         <p>
           <strong>Address:</strong>&nbsp;
-          {userAddress.slice(0, 6) + "..." + userAddress.slice(-4)}
+          {userAddress &&
+            userAddress.slice(0, 6) + "..." + userAddress.slice(-4)}
         </p>
         <Table basic="very">
           <Table.Header>
@@ -43,20 +44,18 @@ const WalletBalance: React.FC<WalletBalanceProps> = ({
             </Table.Row>
           </Table.Header>
           <Table.Body>
-            <Table.Row>
-              <Table.Cell>ETH</Table.Cell>
-              <Table.Cell>0.00</Table.Cell>
-              <Table.Cell>
-                <Button primary size="tiny">
-                  Transfer
-                </Button>
-              </Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>MATIC</Table.Cell>
-              <Table.Cell>0.00</Table.Cell>
-            </Table.Row>
-            {/* Add more rows as needed */}
+            {tokenBalances &&
+              tokenBalances.map((token) => (
+                <Table.Row key={token.tokenAddress}>
+                  <Table.Cell>{token.symbol}</Table.Cell>
+                  <Table.Cell>{token.balance}</Table.Cell>
+                  <Table.Cell>
+                    <Button primary size="tiny">
+                      Transfer
+                    </Button>
+                  </Table.Cell>
+                </Table.Row>
+              ))}
           </Table.Body>
         </Table>
       </Card>

@@ -29,15 +29,15 @@ export function balancesReducer(
         error: null,
       };
     case UPDATE_TOKEN_BALANCES_SUCCESS:
-      const { balance, tokenAddress } =
+      const { tokenBalances } =
         action.payload as UpdateTokenBalancesSuccessAction["payload"];
+
       return {
         ...state,
         loading: false,
-        tokenBalances: state.tokenBalances.map((token) =>
-          token.tokenAddress === tokenAddress ? { ...token, balance } : token
-        ),
+        tokenBalances: tokenBalances || [],
       };
+
     case UPDATE_TOKEN_BALANCES_FAILURE:
       return {
         ...state,

@@ -1,5 +1,5 @@
 ## Basic features
-- [] Check their token balance.
+- [x] Check their token balance.
 - [] Transfer tokens from her wallet.
 - [] Deploy 2 ERC20 dummies DECENT + RALAND
 
@@ -9,6 +9,8 @@
 - [] Selector for the 3+ coins so that the user can check the balance and transfer with each coin
 - [] Draw the transfer section as a new page (different URL) using a using react-router and react-router-dom.
 - [] Add Chain change functionalities on ChainSelector
+- [] Add Reselector library to support selector cache
+- [] Add React Router
 
 ## Aesthetic features
 - [] Move Address into a button to the right... No need to show "Address"

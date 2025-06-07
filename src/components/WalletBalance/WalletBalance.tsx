@@ -1,11 +1,14 @@
 import React from "react";
-import { Card, Header, HeaderMenu } from "decentraland-ui";
+import { Button, Card, Header, HeaderMenu, Table } from "decentraland-ui";
 import { WalletBalanceProps } from "./WalletBalance.types";
 import "./WalletBalance.css";
 import { ChainSelector } from "../ChainSelector/ChainSelector";
 import { ChainId } from "@dcl/schemas";
 
-const WalletBalance: React.FC<WalletBalanceProps> = ({ address }) => {
+const WalletBalance: React.FC<WalletBalanceProps> = ({
+  tokenBalances,
+  userAddress,
+}) => {
   return (
     <>
       <Card>
@@ -29,8 +32,33 @@ const WalletBalance: React.FC<WalletBalanceProps> = ({ address }) => {
         </HeaderMenu>
         <p>
           <strong>Address:</strong>&nbsp;
-          {address.slice(0, 6) + "..." + address.slice(-4)}
+          {userAddress.slice(0, 6) + "..." + userAddress.slice(-4)}
         </p>
+        <Table basic="very">
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Token</Table.HeaderCell>
+              <Table.HeaderCell>Balance</Table.HeaderCell>
+              <Table.HeaderCell></Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>ETH</Table.Cell>
+              <Table.Cell>0.00</Table.Cell>
+              <Table.Cell>
+                <Button primary size="tiny">
+                  Transfer
+                </Button>
+              </Table.Cell>
+            </Table.Row>
+            <Table.Row>
+              <Table.Cell>MATIC</Table.Cell>
+              <Table.Cell>0.00</Table.Cell>
+            </Table.Row>
+            {/* Add more rows as needed */}
+          </Table.Body>
+        </Table>
       </Card>
     </>
   );
